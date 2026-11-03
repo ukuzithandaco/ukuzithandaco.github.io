@@ -381,6 +381,8 @@ const ADDONS = {
   source:  {name:"Please source the hair for me", price:null},
   designs: {name:"Add designs: French tips, charms, hand-painted art (as much as you like)", price:30},
   lashes:  {name:"Strip lashes", price:60},
+  frenchMani: {name:"French tips on your nails", price:20},
+  frenchPedi: {name:"French pedicure on your toes", price:20},
   callout: {name:"Call-out: come to me (Pretoria)", price:150, from:true},
 };
 const PONY = ["length","wash","source"];
@@ -435,14 +437,15 @@ const SECTIONS = [
      {name:"Bridal Party", desc:"Per person", price:450, per:"per person", qty:"How many people?", addons:["callout"]},
     ]}],
    extras:'Strip lashes on Natural Glam <b>+R60</b> · Call-outs in Pretoria from <b>R150</b>'},
-  {id:"bundles", tab:"Bundles", eyebrow:"Bundles · 04", title:"Full <em>bloom</em>",
-   blurb:"Book together, save a little. Medium sets are priced for square & duck; almond & stiletto are R20 more.",
+  {id:"bundles", tab:"Combos", eyebrow:"Combos · 04", title:"Full bloom <em>combos</em>",
+   blurb:"Book together, save a little. Nails and toes are plain sets: add French tips or a French pedicure for R20 each.",
    gallery:[],
    groups:[{items:[
-     {name:"The Full Bloom", desc:"Classic pony + medium set + soft glam", price:850, was:950, bundle:true, shapes:true, addons:[...PONY,"designs"]},
-     {name:"Pony & Nails", desc:"Classic pony + medium set", price:450, mins:210, was:500, bundle:true, shapes:true, addons:[...PONY,"designs"]},
-     {name:"Pony & Glam", desc:"Classic pony + soft glam", price:650, mins:180, was:700, bundle:true, addons:PONY},
-     {name:"Nails & Glam", desc:"Medium set + soft glam", price:650, mins:210, was:700, bundle:true, shapes:true, addons:["designs"]},
+     {name:"Braids, Nails & Toes", desc:"Braids + plain nails + plain gel toes", price:440, mins:300, bundle:true, shapes:true, addons:["frenchMani","frenchPedi"]},
+     {name:"Nails, Toes & Wig Lines", desc:"Plain nails + plain gel toes + wig lines", price:350, mins:210, bundle:true, shapes:true, addons:["frenchMani","frenchPedi"]},
+     {name:"Nails, Pony, Glam & Toes", desc:"Plain nails + slick ponytail + makeup + plain gel toes", price:750, mins:300, bundle:true, shapes:true, addons:["frenchMani","frenchPedi","length","wash","source"]},
+     {name:"Braids & Nails", desc:"Braids + plain nails", price:400, mins:270, bundle:true, shapes:true, addons:["frenchMani"]},
+     {name:"Bestie Combo", desc:"For two: braids + French tip nails each", price:1000, per:"for both", mins:480, bundle:true},
    ]}],
    monthly:true},
 ];
@@ -489,7 +492,7 @@ function renderGrid(){
           </article>`).join("")}
         </div>`).join("")}
       ${s.extras?`<div class="extras">${s.extras}</div>`:""}
-      ${s.monthly?`<div class="monthly"><span class="big">−R50</span><div><b>Monthly bloom</b><span>Book your bundle every month and save R50 more, every time. Mention it when you book.</span></div></div>`:""}
+      ${s.monthly?`<div class="monthly"><span class="big">−R50</span><div><b>Monthly bloom</b><span>Book your combo every month and save R50 more, every time. Mention it when you book.</span></div></div>`:""}
     </div>`).join("");
 }
 $("#tabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b) return; tab=b.dataset.tab; renderTabs(); renderGrid();});
