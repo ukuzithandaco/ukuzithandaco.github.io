@@ -377,7 +377,6 @@ const SHAPES = [["Square",0],["Duck",0],["Almond",SHAPE_EXTRA],["Stiletto",SHAPE
 
 const ADDONS = {
   length:  {name:'Extra length (30" and longer)', price:50},
-  wash:    {name:"Wash & blow-dry", price:80},
   source:  {name:"Please source the hair for me", price:null},
   designs: {name:"Add designs: French tips, charms, hand-painted art (as much as you like)", price:30},
   lashes:  {name:"Strip lashes", price:60},
@@ -385,7 +384,7 @@ const ADDONS = {
   frenchPedi: {name:"French pedicure on your toes", price:20},
   callout: {name:"Call-out: come to me (Pretoria)", price:150, from:true},
 };
-const PONY = ["length","wash","source"];
+const PONY = ["length","source"];
 
 const SECTIONS = [
   {id:"hair", tab:"Slick Ponytails", eyebrow:"Hair · 01", title:"Slick <em>ponytails</em>",
@@ -399,7 +398,7 @@ const SECTIONS = [
      {name:"Space Buns", desc:"Two slick buns, centre part", price:250, img:"p_spacebuns", addons:PONY},
      {name:"Frontal Ponytail", desc:"Lace frontal, melted hairline", price:550, addons:PONY},
    ]}],
-   extras:'Hair not included: bring 2–3 bundles, or ask me to source. Extra length 30"+ <b>+R50</b> · Wash & blow-dry <b>+R80</b>'},
+   extras:'Hair not included: bring 2–3 bundles, or ask me to source. Extra length 30"+ <b>+R50</b> · Please come with clean, washed hair'},
   {id:"nails", tab:"Nails", eyebrow:"Nails · 02", title:"Nails",
    blurb:"Polygel & gel only. Prices are for plain sets. Square & duck at the listed price; almond & stiletto take a little longer to sculpt, so they're R20 more.",
    gallery:[["n_big",""],["art_stiletto",""],["french_almond",""],["n_left",""],["art_square",""],["n_bottom",""],["plain_stiletto",""]],
@@ -443,7 +442,7 @@ const SECTIONS = [
    groups:[{items:[
      {name:"Boho Braids, Nails & Toes", desc:"Short boho knotless braids + plain nails + plain gel toes (bring your own fibre)", price:600, mins:300, bundle:true, shapes:true, addons:["frenchMani","frenchPedi"]},
      {name:"Nails, Toes & Wig Lines", desc:"Plain nails + plain gel toes + wig lines", price:420, mins:210, bundle:true, shapes:true, addons:["frenchMani","frenchPedi"]},
-     {name:"Nails, Pony, Glam & Toes", desc:"Plain nails + slick ponytail + makeup + plain gel toes", price:750, mins:390, bundle:true, shapes:true, addons:["frenchMani","frenchPedi","length","wash","source"]},
+     {name:"Nails, Pony, Glam & Toes", desc:"Plain nails + slick ponytail + makeup + plain gel toes", price:750, mins:390, bundle:true, shapes:true, addons:["frenchMani","frenchPedi","length","source"]},
      {name:"Boho Braids & Nails", desc:"Short boho knotless braids + plain nails (bring your own fibre)", price:500, mins:270, bundle:true, shapes:true, addons:["frenchMani"]},
      {name:"Bestie Combo", desc:"For two: short boho knotless braids + French tip nails each (bring your own fibre)", price:1000, per:"for both", mins:480, bundle:true},
    ]}]},
